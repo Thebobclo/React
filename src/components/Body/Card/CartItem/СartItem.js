@@ -10,9 +10,10 @@ export const CartItem = ({
   inCriseAmount,
   decriceAmount,
   deleteFromCart,
+  theme
 }) => {
   return (
-    <div className={style.cartRoot}>
+    <div className={style.cartRoot} id={theme}>
       <li className={style.container}>
         <h5 className={style.cartElementName}>{name}</h5>
         <img className={style.cartElementImg} src={img} />
@@ -21,7 +22,7 @@ export const CartItem = ({
         <span className={style.cartElementPrice}>{price}₽</span>
         <span className={style.cartAmount}>{amount}шт</span>
         <button
-          className={style.buttons}
+          className={style.buttons} id={theme}
           onClick={() => {
             inCriseAmount(id);
           }}
@@ -29,7 +30,7 @@ export const CartItem = ({
           Увеличить
         </button>
         <button
-          className={style.buttons}
+          className={style.buttons} id={theme}
           onClick={() => {
             decriceAmount(id);
           }}
@@ -37,7 +38,7 @@ export const CartItem = ({
           Уменьшить
         </button>
         <button
-          className={style.buttons}
+          className={style.buttons}id={theme}
           onClick={() => {
             deleteFromCart(id);
           }}

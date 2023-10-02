@@ -13,22 +13,26 @@ export const Body = ({
   inCriseAmount,
   decriceAmount,
   deleteFromCart,
+  toggleTheme,
+  theme
 }) => {
   return (
     <main className={style.mainContainer}>
       <div>
         {isCartVisible && (
-          <Cart
+          <Cart 
             cart={cart}
             onClose={clickCardVisibleHandler}
             className={style.cart}
             inCriseAmount={inCriseAmount}
             decriceAmount={decriceAmount}
+            deleteFromCart={deleteFromCart}
+            theme={theme}
           />
         )}
       </div>
 
-      <div className={style.root}>
+      <div className={style.root} id={theme}>
         {catalog.map((product) => (
           <ProductCard
             key={product.id}
@@ -37,6 +41,7 @@ export const Body = ({
             img={product.img}
             price={product.price}
             addToCart={addToCart}
+            theme={theme}
           />
         ))}
       </div>

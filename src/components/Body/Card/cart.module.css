@@ -31,9 +31,19 @@
 }
 .summ{
     margin: 1em 0 0.5em 0;
-    color: #343434;
+    color: #000000;
     font-weight: large;
     font-size: 14px;
     text-transform: uppercase;
 
 }
+
+
+
+#light {
+    background-color: #ffffff;
+  }
+  
+  #dark {
+    background-color: #142136;
+  }

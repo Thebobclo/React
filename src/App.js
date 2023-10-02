@@ -5,7 +5,17 @@ import "./App.css";
 import { useState } from "react";
 import { CATALOG } from "./components/Body/resourses/catalog";
 
+import { createContext } from "react";
+import ReactSwitch from "react-switch";
+
+export const ThemeContext = createContext(null);
 function App() {
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === "light" ? "dark" : "light"));
+  };
+
   const [isCartVisible, setCartVisible] = useState(false);
   const clickCardVisibleHandler = () => {
     setCartVisible(!isCartVisible);
@@ -40,8 +50,7 @@ function App() {
       if (elm.id === id) {
         return { ...elm, amount: elm.amount - 1 };
       }
-      return elm
-    
+      return elm;
     });
     setCart(newCart);
   };
@@ -65,8 +74,12 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Header clickCardVisibleHandler={clickCardVisibleHandler} />
+    <div className="App" id={theme}>
+      <Header
+        clickCardVisibleHandler={clickCardVisibleHandler}
+        toggleTheme={toggleTheme}
+        checked={theme==="light"}
+      />
       <Body
         addToCart={addToCart}
         cart={cart}
@@ -76,14 +89,13 @@ function App() {
         decriceAmount={decriceAmount}
         deleteFromCart={deleteFromCart}
         inCriseAmount={inCriseAmount}
+        theme={theme}
+        toggleTheme={toggleTheme}
+      
       />
-      <Footer />
+      <Footer id={theme} />
     </div>
   );
 }
 
 export default App;
-
-//добавить в эдемент корзины кнопку убавить уведичить удалить из карзтны
-
-//во всей корзине купить,общая сумма
