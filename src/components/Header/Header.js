@@ -1,6 +1,6 @@
 import style from "./style.module.css";
 import { IconButton } from "@mui/material";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import ShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import React from "react";
 import { createContext, useState } from "react";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
@@ -15,17 +15,18 @@ export const Header = ({
   theme,
   toggleTheme,
   checked,
+ 
 }) => {
   return (
     <div className={style.container} id={theme}>
       <h1 className={style.header}>Guitar shop </h1>
       <IconButton
         onClick={clickCardVisibleHandler}
-        color="primary"
+        color="inherit"
         aria-label="add to shopping cart"
         className={style.button}
       >
-        <AddShoppingCartIcon />
+        <ShoppingCartIcon />
       </IconButton>
 
       <IconButton

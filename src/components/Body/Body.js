@@ -1,6 +1,6 @@
 import style from "./body.module.css";
 import { ProductCard } from "./ProductCard/ProductCard";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { Cart } from "./Card/Cart";
 import { click } from "@testing-library/user-event/dist/click";
 
@@ -14,10 +14,15 @@ export const Body = ({
   decriceAmount,
   deleteFromCart,
   toggleTheme,
-  theme
+  theme,
+  data,
+  useEffect,
 }) => {
+
+  
   return (
     <main className={style.mainContainer}>
+      
       <div>
         {isCartVisible && (
           <Cart 
@@ -32,19 +37,45 @@ export const Body = ({
         )}
       </div>
 
+      
       <div className={style.root} id={theme}>
-        {catalog.map((product) => (
-          <ProductCard
-            key={product.id}
-            id={product.id}
-            name={product.name}
-            img={product.img}
-            price={product.price}
+      {data &&  (
+             (data.map(data=> 
+      <ProductCard
+            key={data.id}
+            id={data.id}
+            name={data.name}
+            img={data.image}
+            price={data.price}
             addToCart={addToCart}
             theme={theme}
-          />
+            useEffect={useEffect}
+            data={data}   
+            />)
+            ))}
+          </div>
+        </main>
+      );
+    };
+          
+      {/* {data && (
+      <div className={style.root} id={theme}>
+        
+        {data.map((good) => (
+          
+          <ProductCard
+            key={data.id}
+            id={data.id}
+            name={data.name}
+            img={data.img}
+            price={data.price}
+            addToCart={addToCart}
+            theme={theme}
+            useEffect={useEffect}
+            data={data}
+          />)
         ))}
       </div>
     </main>
   );
-};
+}; */}
