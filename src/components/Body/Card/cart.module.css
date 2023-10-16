@@ -2,7 +2,6 @@
 .cartRoot{
     width: 100%;
     list-style: none;
-    display: flex;
     flex-direction: row;
     justify-content: center;
     padding-bottom: 10px;
@@ -15,13 +14,13 @@
 
 .cartElementImg {
     width: 100%;
-    height: 150px;
+    height: 100px;
     margin-top: var(--spacing-medium);
     object-fit: contain;
 }
 
 .elm{
-    display: flex;
+  
     flex-direction: column;
     justify-content: flex-end;
     padding: 25px 20px;
@@ -31,9 +30,19 @@
 }
 .summ{
     margin: 1em 0 0.5em 0;
-    color: #343434;
+    color: #000000;
     font-weight: large;
     font-size: 14px;
     text-transform: uppercase;
 
 }
+
+
+
+#light {
+    background-color: #ffffff;
+  }
+  
+  #dark {
+    background-color: #142136;
+  }

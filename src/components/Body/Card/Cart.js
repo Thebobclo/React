@@ -11,27 +11,30 @@ export const Cart = ({
   decriceAmount,
   deleteFromCart,
   inCriseAmount,
+  theme,
+  data,
 }) => {
-  const summ = cart.reduce((total, elm) => total + elm.amount * elm.price, 0);
+  const summ = cart.reduce((total, elm) => total + elm.amount * elm.price, 0).toFixed(2);
   return (
-    <div className={className}>
+    <div className={className} id={theme} >
       <span className={style.summ}>Общая стоимость: {summ} ₽</span>
-      <IconButton onClick={onClose} color="primary" aria-label="Close">
+      <IconButton onClick={onClose} color="inherit" aria-label="Close">
         <CloseIcon />
       </IconButton>
 
-      <div className={style.rootCart}>
-        {cart.map((product) => (
+      <div className={style.rootCart} id={theme} >
+        {cart.map((data) => (
           <CartItem
-            key={product.id}
-            id={product.id}
-            amount={product.amount}
-            name={product.name}
-            img={product.img}
-            price={product.price}
+            key={data.id}
+            id={data.id}
+            amount={data.amount}
+            title={data.title}
+            image={data.image}
+            price={data.price}
             decriceAmount={decriceAmount}
             deleteFromCart={deleteFromCart}
             inCriseAmount={inCriseAmount}
+            theme={theme}
           />
         ))}
       </div>

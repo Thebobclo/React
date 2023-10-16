@@ -46,3 +46,10 @@
     font-size: inherit;
 }
 
+#light {
+    background-color: #ffffff;
+  }
+  
+  #dark {
+    background-color: #142136;
+  }
