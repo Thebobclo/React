@@ -21,9 +21,9 @@ code {
   --color-white: #fff;
   --color-unaccent: #808080;
 
-  --spacing-small: 10px;
-  --spacing-medium: 15px;
-  --spacing-large: 30px;
+  --spacing-small: 5px;
+  --spacing-medium: 10px;
+  --spacing-large: 15px;
 
   --border-radius: 3px;
   --linear-gradient: linear-gradient(to right, #e2f87c, #d6f567, #c8f151, #b9ee38, #a8eb12);
@@ -35,4 +35,21 @@ code {
 
 * {
   box-sizing: border-box;
+}
+html[data-theme='dark'] {
+  --button-text-color: #ffffff;
+  --button-background-color: #4e005c;
+  --button-border-color: #ba8fc2;
+
+  --background-color: #292929;
+  --icon-color: #ba8fc2;
+}
+
+html[data-theme='light'] {
+  --button-text-color: #252525;
+  --button-background-color: #f9d4ff;
+  --button-border-color: #4e005c;
+
+  --background-color: #dfdfdf;
+  --icon-color: #4e005c;
 }

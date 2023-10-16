@@ -1,7 +1,6 @@
 .root {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-gap: 25px;
     width: 80%;
     max-width: 1200px;
     margin: var(--spacing-large) auto;
@@ -47,3 +46,10 @@
     font-size: inherit;
 }
 
+#light {
+    background-color: #ffffff;
+  }
+  
+  #dark {
+    background-color: #142136;
+  }
