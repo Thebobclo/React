@@ -14,15 +14,17 @@ export const Cart = ({
   theme,
   data,
 }) => {
-  const summ = cart.reduce((total, elm) => total + elm.amount * elm.price, 0).toFixed(2);
+  const summ = cart
+    .reduce((total, elm) => total + elm.amount * elm.price, 0)
+    .toFixed(2);
   return (
-    <div className={className} id={theme} >
+    <div className={className} id={theme}>
       <span className={style.summ}>Общая стоимость: {summ} ₽</span>
       <IconButton onClick={onClose} color="inherit" aria-label="Close">
         <CloseIcon />
       </IconButton>
 
-      <div className={style.rootCart} id={theme} >
+      <div className={style.rootCart} id={theme}>
         {cart.map((data) => (
           <CartItem
             key={data.id}
